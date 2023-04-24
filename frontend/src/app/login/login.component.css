@@ -1,0 +1,14 @@
+:host >>> .login-form {
+    width: 30%;
+}
+
+:host >>> .p-inputtext {
+    width: 100%;
+}
+
+.title-form{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: .5em;
+}

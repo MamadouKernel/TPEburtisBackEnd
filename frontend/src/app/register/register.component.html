@@ -1,0 +1,128 @@
+<div
+  class="p-grid card mt-5"
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+  "
+>
+  <div
+    class="p-col-12 p-md-6"
+    style="display: flex; justify-content: center; align-items: center"
+  >
+    <p-card
+      [style]="{
+        width: '50rem',
+        height: 'auto',
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center'
+      }"
+    >
+    <p-toast #message></p-toast>
+      <form [formGroup]="inscriptionForm" (ngSubmit)="createUser()">
+        <h4 class="title-form" style="text-align: center">Inscription</h4>
+        <div class="field" style="display: flex; align-items: center">
+          <input
+            type="text"
+            pInputText
+            placeholder="votre nom"
+            formControlName="firstName"
+            style="width: 100%"
+          />
+          <small
+            class="p-error block"
+            *ngIf="
+              inscriptionForm.get('firstName')?.invalid &&
+              inscriptionForm.get('firstName')?.dirty
+            "
+            >Nom obligatoire</small
+          >
+        </div>
+        <br />
+        <div class="field" style="display: flex; align-items: center">
+          <input
+            type="text"
+            pInputText
+            placeholder="votre prénom"
+            formControlName="lastName"
+            style="width: 100%"
+          />
+          <small
+            class="p-error block"
+            *ngIf="
+              inscriptionForm.get('lastName')?.invalid &&
+              inscriptionForm.get('lastName')?.dirty
+            "
+            >Prénom obligatoire</small
+          >
+        </div>
+        <br />
+        <div class="field" style="display: flex; align-items: center">
+          <input
+            type="email"
+            pInputText
+            placeholder="votre adresse mail"
+            formControlName="email"
+            style="width: 100%"
+          />
+          <small
+            class="p-error block"
+            *ngIf="
+              inscriptionForm.get('email')?.invalid &&
+              inscriptionForm.get('email')?.dirty
+            "
+            >Email obligatoire</small
+          >
+        </div>
+        <br />
+        <div class="field" style="display: flex; align-items: center">
+          <input
+            type="password"
+            pInputText
+            placeholder="votre mot de passe"
+            formControlName="password"
+            style="width: 100%"
+          />
+          <small
+            class="p-error block"
+            *ngIf="
+              inscriptionForm.get('password')?.invalid &&
+              inscriptionForm.get('password')?.dirty
+            "
+            >Mot de passe obligatoire</small
+          >
+        </div>
+        <br />
+        <div
+          style="
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+          "
+        >
+          <button
+            pButton
+            class="p-button-raised p-button-rounded"
+            label="Inscription"
+            [disabled]="inscriptionForm.invalid"
+            type="submit"
+            style="width: 100%"
+          ></button>
+        </div>
+        <br />
+        <div style="text-align: center">
+          <a routerLink="/connexion">Déjà inscrit ? Connectez-vous ici.</a>
+        </div>
+      </form>
+    </p-card>
+  </div>
+</div>
