@@ -5,9 +5,13 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "users")
 public class User{
+    // Définition de l'identifiant unique de l'utilisateur
     @Id
+    // Définition de la stratégie de génération de l'identifiant unique
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    // Définition des attributs de l'utilisateur
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
