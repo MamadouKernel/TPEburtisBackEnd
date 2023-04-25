@@ -6,12 +6,12 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'connexion', pathMatch: 'full' },
   { path: 'connexion', component: LoginComponent },
   { path: 'inscription', component: RegisterComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   // route par défaut, redirige vers la page d'accueil si la route n'est pas trouvée
-  { path: '**', redirectTo: '/home' }
+  { path: '**', redirectTo: 'connexion' }
 ];
 
 
